@@ -67,7 +67,7 @@ class WorkHoursController extends Controller
             if (isset($value->hours))
                 $count += $value->hours;
         }
-        $pdf = PDF::loadview('employees.showAllOfEmployee', ['employee' => $employee, 'count' => $count]);
+        $pdf = PDF::loadview('employees.createPDF', ['employee' => $employee, 'count' => $count]);
         return $pdf->download("$name.pdf");
     }
 
